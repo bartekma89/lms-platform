@@ -1,9 +1,9 @@
 export class FetchError extends Error {
   status: number;
-  data: any;
+  data: unknown;
   url: string;
 
-  constructor(message: string, status: number, data: any, url: string) {
+  constructor(message: string, status: number, data: unknown, url: string) {
     super(message);
     this.name = "FetchError";
     this.status = status;
@@ -12,7 +12,7 @@ export class FetchError extends Error {
   }
 }
 
-export async function fetchClient<T = any>(
+export async function fetchClient<T = unknown>(
   url: string,
   options: RequestInit = {}
 ) {

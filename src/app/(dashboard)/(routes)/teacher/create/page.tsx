@@ -44,7 +44,11 @@ const CreatePage = () => {
         body: JSON.stringify(data),
       });
 
-      router.push(`/teacher/courses/${response.data.id}`);
+      const {
+        data: { id },
+      } = response as { data: { id: string } };
+
+      router.push(`/teacher/courses/${id}`);
       toast.success("Course created!");
     } catch {
       toast.error("Something went wrong. Please try again.");
