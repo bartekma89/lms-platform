@@ -19,7 +19,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { fetchClient } from "@/lib/fetchClient";
-import router from "next/router";
 
 const formSchema = z.object({
   title: z.string().nonempty({ message: "Title is required" }),
